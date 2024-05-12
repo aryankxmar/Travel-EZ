@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel-EZ </title>
+    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="brand">Travel-EZ</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="about.html">About Us</a>
+                <a href="login page.html">Sign Up</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="new feed.html">Feedback</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="gate.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="temple.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="off road.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="mountains.mp4"   autoplay muted loop></video>
+        <video class="video-slide" src="beach 2.mp4"   autoplay muted loop></video>
+        <div class="content active">
+            <h1>Monuments.<br><span>Mesmerising</span></h1>
+            <p>Ditch museums, touch time! Climb pyramids, whisper with emperors, stand where legends lived. Decode secrets, feel history pulse, write your own epic. Monuments aren't relics, they're time machines. Explore, conquer, become legend. Unveil the past, own the future.</p>
+            <a href="monuments.html">Explore</a>
+        </div>
+        <div class="content">
+            <h1>Religious.<br><span>Peace</span></h1>
+            <p>Ditch the crowds, find faith's whisper. Explore hidden temples, mountain monasteries, ancient paths. Feel the pulse of prayer, breathe the sacred air. More than sightseeing, it's soul-searching. Discover your spirit. Unveil the divine. Explore sacred whispers.</p>
+            <a href="religious.html">Explore</a>
+        </div>
+        <div class="content">
+            <h1>Adventures.<br><span>Off Road</span></h1>
+            <p>Forget roads, ride freedom! Off-road beckons, dust in your hair, adrenaline in your veins. Conquer terrain, discover vistas, ditch the ordinary. Escape the routine, roar into adventure. Off-road's not just a drive, it's a rebirth. Ready to answer the call? Unleash your wild. Get dirty. Discover yourself. Off-road awaits.</p>
+            <a href="adventure.html">Explore</a>
+        </div>
+        <div class="content">
+            <h1>Mountain.<br><span>Explore</span></h1>
+            <p>Ditch the map, chase horizons! Open road screams freedom, wind in your hair, music in your soul. Every mile a story, every town a surprise. Forget souvenirs, collect memories. Hit the gas, live the road trip. Your adventure awaits.</p>
+            <a href="mountains.html">Explore</a>
+        </div>
+        <div class="content">
+            <h1>Beaches.<br><span>Relax</span></h1>
+            <p>Discover the allure of sun-kissed shores and azure waters, where relaxation meets adventure. Lose yourself in powdery sands and rhythmic waves, indulge in thrilling water sports, and savor serene beachfront sunsets. Embrace coastal bliss and create unforgettable memories along the shimmering shoreline.<p>
+                <a href="nature1.html">Explore</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        //Javascript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+           });
+
+           //Javascript for video slider navigation
+           const btns = document.querySelectorAll(".nav-btn");
+           const slides = document.querySelectorAll(".video-slide");
+           const contents = document.querySelectorAll(".content");
+
+           var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+            slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+            content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+            }
+
+            btns.forEach((btn,i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+            });
+    </script>
+</body>
+</html>
